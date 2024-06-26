@@ -7,14 +7,15 @@ import { IMG_BUBBLE_DATA_FOLDER } from "../../config/constants";
 import ImageBubble from "../home/components/ImageBubble";
 
 const Login : React.FC = () => {
+    const folderImg = IMG_BUBBLE_DATA_FOLDER;
 
     const bubbleData = [
         {
-            image: IMG_BUBBLE_DATA_FOLDER + "im7.jpg",
+            image: folderImg + "im7.jpg",
             className: "login__display__box login__display__box--one"
         },
         {
-            image: IMG_BUBBLE_DATA_FOLDER + "im8.jpg",
+            image: folderImg + "im8.jpg",
             className: "login__display__box login__display__box--two"
         }
     ];

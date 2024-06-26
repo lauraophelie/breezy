@@ -2,9 +2,10 @@ import { IonPage } from '@ionic/react';
 import './Home.scss';
 import ArrowButton from './home/ArrowButton';
 import ImageBubble from './home/components/ImageBubble';
+import { IMG_BUBBLE_DATA_FOLDER } from "../config/constants";
 
 const Home: React.FC = () => {
-  const folderImg = "src/assets/imgs/";
+  const folderImg = IMG_BUBBLE_DATA_FOLDER;
 
   const bubbleData = [
     {
@@ -42,7 +43,7 @@ const Home: React.FC = () => {
                 Breezy
               </h3>
           </div>
-          
+
           {bubbleData.map((item, index) => (
             <ImageBubble
               key={index}
