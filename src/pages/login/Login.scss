@@ -1,0 +1,33 @@
+@import "../../assets/scss/variable.scss";
+@import "../../assets/scss/mixin.scss";
+
+.login {
+    &__display {
+        border: 1px solid lightblue;
+        height: 30%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 100px;
+        grid-gap: 20px;
+
+        &__box {
+            @include custom-box-size(50px, 50px, 50%);
+            grid-row: 1;
+
+            &--one {
+                @include custom-box-size(250px, 250px, 50%);
+                transform: translate(-105px, -105px);
+                background-color: slateblue
+            }
+
+            &--two {
+                @include custom-box-size(175px, 175px, 50%);
+                background-color: cadetblue;
+            }
+        }
+    }
+    
+    &__content {
+        height: 70%;
+    }
+}
