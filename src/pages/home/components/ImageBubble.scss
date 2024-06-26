@@ -1,0 +1,5 @@
+@import "../../../assets/scss/mixin.scss";
+
+.bubble-image {
+    @include custom-box-size(100%, 100%, 50%);
+}
