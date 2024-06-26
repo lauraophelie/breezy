@@ -1,0 +1,10 @@
+@mixin box-shadow($horizental: 0, $vertical: 0, $flou: 0, $color) {
+    box-shadow: $horizental $vertical $flou $color;
+}
+
+@mixin custom-box-size($height: 100px, $width: 100px, $border-radius: 0, $border: 1px solid transparent) {
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: $border-radius;
+}

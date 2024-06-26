@@ -1,22 +1,59 @@
 import { IonPage } from '@ionic/react';
 import './Home.scss';
 import ArrowButton from './home/ArrowButton';
+import ImageBubble from './home/components/ImageBubble';
+import { IMG_BUBBLE_DATA_FOLDER } from "../config/constants";
+import { useHistory } from 'react-router';
 
 const Home: React.FC = () => {
+  const folderImg = IMG_BUBBLE_DATA_FOLDER;
+
+  const bubbleData = [
+    {
+      className: "landing__display__box landing__display__box--three",
+      image: folderImg + "im3.jpg"
+    },
+    {
+      className: "landing__display__box landing__display__box--four",
+      image: folderImg + "im4.jpg"
+    },
+    {
+      className: "landing__display__box landing__display__box--five",
+      image: folderImg + "im2.jpg"
+    },
+    {
+      className: "landing__display__box landing__display__box--six",
+      image: folderImg + "im6.jpg"
+    },
+    {
+      className: "landing__display__box landing__display__box--seven",
+      image: folderImg + "im5.jpg"
+    }
+  ]
+
+  const history = useHistory();
+
   return (
     <IonPage className="landing">
       <div className="landing__display">
-          <div className="landing__display__box landing__display__box--one"> </div>
+          <ImageBubble
+            imageSrc={folderImg + "im1.jpg"}
+            className="landing__display__box landing__display__box--one"
+          />
+
           <div className="landing__display__box landing__display__box--two"> 
               <h3 className="landing__display__box landing__display__box--two__title">
                 Breezy
               </h3>
           </div>
-          <div className="landing__display__box landing__display__box--three"> </div>
-          <div className="landing__display__box landing__display__box--four"> </div>
-          <div className="landing__display__box landing__display__box--five"> </div>
-          <div className="landing__display__box landing__display__box--six"> </div>
-          <div className="landing__display__box landing__display__box--seven"> </div>
+
+          {bubbleData.map((item, index) => (
+            <ImageBubble
+              key={index}
+              className={item.className}
+              imageSrc={item.image}
+            />
+          ))}
       </div>
       <div className="landing__getting-started">
         <h1 className="landing__getting-started--title">
@@ -28,7 +65,9 @@ const Home: React.FC = () => {
           </p>
         </h1>
 
-        <ArrowButton />
+        <ArrowButton 
+          onClick={() => history.push("/login")}
+        />
       </div>
     </IonPage>
   );
