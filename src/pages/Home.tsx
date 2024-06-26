@@ -3,6 +3,7 @@ import './Home.scss';
 import ArrowButton from './home/ArrowButton';
 import ImageBubble from './home/components/ImageBubble';
 import { IMG_BUBBLE_DATA_FOLDER } from "../config/constants";
+import { useHistory } from 'react-router';
 
 const Home: React.FC = () => {
   const folderImg = IMG_BUBBLE_DATA_FOLDER;
@@ -29,6 +30,8 @@ const Home: React.FC = () => {
       image: folderImg + "im5.jpg"
     }
   ]
+
+  const history = useHistory();
 
   return (
     <IonPage className="landing">
@@ -62,7 +65,9 @@ const Home: React.FC = () => {
           </p>
         </h1>
 
-        <ArrowButton />
+        <ArrowButton 
+          onClick={() => history.push("/login")}
+        />
       </div>
     </IonPage>
   );

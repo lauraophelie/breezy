@@ -5,18 +5,22 @@ import Bouton from "../../components/button/Bouton";
 
 import { IMG_BUBBLE_DATA_FOLDER } from "../../config/constants";
 import ImageBubble from "../home/components/ImageBubble";
+import { useHistory } from "react-router";
 
 const Login : React.FC = () => {
     const folderImg = IMG_BUBBLE_DATA_FOLDER;
+    const history = useHistory();
 
     const bubbleData = [
         {
             image: folderImg + "im7.jpg",
-            className: "login__display__box login__display__box--one"
+            className: "login__display__box login__display__box--one",
+            onClick: () => history.push("/home")
         },
         {
             image: folderImg + "im8.jpg",
-            className: "login__display__box login__display__box--two"
+            className: "login__display__box login__display__box--two",
+            onClick: () => history.push("/home")
         }
     ];
 
@@ -28,6 +32,7 @@ const Login : React.FC = () => {
                         key={index}
                         className={item.className}
                         imageSrc={item.image}
+                        onClick={item.onClick}
                     />
                 ))}
             </div>

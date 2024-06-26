@@ -4,6 +4,7 @@ import "./ImageBubble.scss";
 interface ImageBubbleProps {
     imageSrc: string;
     className?: string;
+    onClick?: (event: any) => void;
 }
 
 const ImageBubble: React.FC<ImageBubbleProps> = (props) => {
@@ -13,6 +14,7 @@ const ImageBubble: React.FC<ImageBubbleProps> = (props) => {
                 src={props.imageSrc}
                 className="bubble-image"
                 alt="NO"
+                onClick={props.onClick}
             />      
         </div>
     )

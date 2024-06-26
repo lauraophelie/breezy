@@ -4,6 +4,7 @@ interface ImageBoxProps {
     width?: string;
     height?: string;
     alt?: string;
+    onClick?: (event: any) => void;
 }
 
 const ImageBox : React.FC<ImageBoxProps> = (props) => {
@@ -14,6 +15,7 @@ const ImageBox : React.FC<ImageBoxProps> = (props) => {
             width={props.width}
             height={props.height}
             alt={props.alt}
+            onClick={props.onClick}
         />
     )
 }
