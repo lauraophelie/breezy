@@ -29,5 +29,18 @@
     
     &__content {
         height: 70%;
+
+        &__title {
+            font-family: $main-component-title-font;
+            font-size: 36px;
+        }
+
+        &__subtitle {
+            font-family: $secondary-component-title-font;
+            font-weight: lighter;
+            color: $subtitle-color;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
     }
 }

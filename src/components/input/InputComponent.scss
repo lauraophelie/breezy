@@ -1,0 +1,18 @@
+@import "../../assets/scss/mixin.scss";
+@import "../../assets/scss/variable.scss";
+
+.input {
+    @include custom-box-size(50px, 285px, 5px);
+    background-color: $subcomponent-background-color;
+    color: $placeholder-color;
+    font-family: $secondary-component-title-font;
+    font-size: 17px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    padding-left: 20px;
+}
+
+.input::placeholder {
+    color: $placeholder-color;
+    font-family: $secondary-component-title-font;
+}
