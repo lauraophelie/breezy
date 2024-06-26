@@ -1,0 +1,8 @@
+@import "../../assets/scss/mixin.scss";
+@import "../../assets/scss/variable.scss";
+
+.bouton {
+    @include custom-box-size(50px, 285px, 5px);
+    font-size: 18px;
+    font-family: $main-component-title-font;
+}

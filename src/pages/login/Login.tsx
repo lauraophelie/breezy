@@ -1,6 +1,7 @@
 import { IonPage } from "@ionic/react";
 import "./Login.scss";
 import InputComponent from "../../components/input/InputComponent";
+import Bouton from "../../components/button/Bouton";
 
 const Login : React.FC = () => {
     return (
@@ -24,6 +25,10 @@ const Login : React.FC = () => {
                     type={"text"} 
                     required={true}     
                     placeholder="Numéro de téléphone"           
+                />
+                <Bouton
+                    text="Se connecter"
+                    className="login__content__submit-button"
                 />
             </div>
         </IonPage>
