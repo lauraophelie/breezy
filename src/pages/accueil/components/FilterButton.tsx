@@ -6,17 +6,25 @@ interface FilterButtonProps {
     textContent: string;
     className?: string;
     id?: string;
-    onClick?: (event: any) => void;
+    defaultClick?: number;
 }
 
 const FilterButton : React.FC<FilterButtonProps> = (props) => {
-    const [click, setClick] = useState(0)
+    var [click, setClick] = useState((props.defaultClick) ? props.defaultClick : 1);
+
+    const setFilter = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        click++;
+        setClick(click);
+    };
+
+    const setClassName = (click != 0 && click % 2 == 0) ? "filter-button filter-button--active" : "filter-button";
 
     return (
         <Bouton
             text={props.textContent}
-            onClick={props.onClick}
-            className={"filter-button " + props.className}
+            onClick={setFilter}
+            className={setClassName + " " + props.className}
             id={props.id}
         />
     )

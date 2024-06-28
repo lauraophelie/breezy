@@ -27,6 +27,7 @@ const Accueil : React.FC = () => {
                 <FilterButton 
                     textContent="Tout"
                     id="acceuil__filter__one"
+                    defaultClick={2}
                 />
 
                 <FilterButton 
