@@ -2,6 +2,8 @@
 @import "../../assets/scss/mixin.scss";
 
 .login {
+    background-color: $main-background-color;
+
     &__display {
         height: 30%;
         display: grid;
