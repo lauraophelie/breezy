@@ -1,8 +1,10 @@
 import { IonPage } from "@ionic/react";
 import "./Accueil.scss";
 import InputComponent from "../../components/input/InputComponent";
+import FilterButton from "./components/FilterButton";
 
 const Accueil : React.FC = () => {
+
     return (
         <IonPage className="accueil">
             <div className="accueil__header">
@@ -22,7 +24,22 @@ const Accueil : React.FC = () => {
                 />
             </div>
             <div className="accueil__filter">
+                <FilterButton 
+                    textContent="Tout"
+                    id="acceuil__filter__one"
+                />
 
+                <FilterButton 
+                    textContent="Fruits"
+                />
+
+                <FilterButton
+                    textContent="Légumes"
+                />
+
+                <FilterButton
+                    textContent="Boissons"
+                />
             </div>
             <div className="accueil__display-content">
 

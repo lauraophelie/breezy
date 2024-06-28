@@ -12,7 +12,7 @@
         justify-content: flex-end;
 
         &__title, &__search {
-            margin-left: 8%;
+            margin-left: 25px;
         }
 
         &__title {
@@ -33,11 +33,22 @@
         }
     }
     &__filter {
-        border: 1px solid white;
         height: 15%;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        gap: 15px;
     }
     &__display-content {
         border: 1px solid cadetblue;
         height: 60%;
+    }
+}
+
+#acceuil {
+    &__filter {
+        &__one {
+            margin-left: 25px;
+        }
     }
 }
