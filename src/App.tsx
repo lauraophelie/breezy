@@ -33,7 +33,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Login from './pages/login/Login';
-import Acceuil from './pages/accueil/Acceuil';
+import Footer from './components/footer/Footer';
 
 setupIonicReact();
 
@@ -50,9 +50,8 @@ const App: React.FC = () => (
         <Route path="/login">
           <Login />
         </Route> 
-        <Route path="/acceuil">
-          <Acceuil />
-        </Route>
+
+        <Footer />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
