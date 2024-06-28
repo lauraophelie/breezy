@@ -3,4 +3,41 @@
 
 .accueil {
     background-color: $main-background-color;
+
+    &__header {
+        border: 1px solid transparent;
+        height: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &__title, &__search {
+            margin-left: 8%;
+        }
+
+        &__title {
+            font-family: $main-component-title-font;
+            line-height: 5px;
+            white-space: nowrap;
+            font-size: 24px;
+        }
+
+        &__search {
+            background-image: url("src/assets/icon/search.svg");
+            background-repeat: no-repeat;
+            background-position: 10px;
+            background-size: 25px 25px;
+            width: 300px;
+            letter-spacing: 1px;
+            padding-left: 40px;
+        }
+    }
+    &__filter {
+        border: 1px solid white;
+        height: 15%;
+    }
+    &__display-content {
+        border: 1px solid cadetblue;
+        height: 60%;
+    }
 }
