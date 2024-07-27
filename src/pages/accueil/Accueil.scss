@@ -40,9 +40,18 @@
         gap: 15px;
     }
     &__display-content {
-        border: 1px solid cadetblue;
+        border: 1px solid transparent;
         height: 60%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 100px;
+        grid-gap: 115px 0px;
+        overflow-y: auto;
     }
+}
+
+.acceuil-ion-content {
+    --background: transparent;
 }
 
 #acceuil {

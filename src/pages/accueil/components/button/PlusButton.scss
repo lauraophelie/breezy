@@ -1,0 +1,15 @@
+@import "../../../../assets/scss/mixin.scss";
+@import "../../../../assets/scss/variable.scss";
+
+.plus-button {
+    background-color: $main-component-color;
+    @include custom-box-size(50px, 50px, 50%);
+
+    &__icon {
+        color: rgb(0, 0, 0);
+        height: 50%;
+        width: 50%;
+        font-weight: bolder;
+        transform: translate(50%, 50%);
+    }
+}
