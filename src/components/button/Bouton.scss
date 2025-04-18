@@ -4,5 +4,6 @@
 .bouton {
     @include custom-box-size(50px, 285px, 5px);
     font-size: 18px;
+    font-weight: 600;
     font-family: $main-component-title-font;
 }
