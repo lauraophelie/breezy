@@ -10,8 +10,22 @@ $filter-button-color: #E0DFE5;
 $filter-button-color-transparent: #e0dfe537;
 $display-white: #F5F5F5;
 
-$main-logo-title-font: 'Heyam';
-$main-component-title-font: 'Arial Rounded MT';
-$secondary-component-title-font: 'Segoe UI';
+$main-logo-title-font: 'Heyam', sans-serif;
+$main-component-title-font: 'Arial Rounded MT', sans-serif;
+$secondary-component-title-font: 'Segoe UI', sans-serif;
 $title-font: Arial, Helvetica, sans-serif;
+
+@font-face {
+    font-family: $main-logo-title-font;
+    src: url('../fonts/heyam/Heyam.ttf') format('ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $main-component-title-font;
+    src: url('../fonts/arial-rounded-mt/Arial_Rounded_MT_Regular.ttf') format('ttf');
+    font-display: swap;
+}
+
+
 
