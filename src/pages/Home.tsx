@@ -2,11 +2,11 @@ import { IonPage } from '@ionic/react';
 import './Home.scss';
 import ArrowButton from './home/ArrowButton';
 import ImageBubble from './home/components/ImageBubble';
-import { IMG_BUBBLE_DATA_FOLDER } from "../config/constants";
 import { useHistory } from 'react-router';
+import { variables } from '../config/constants';
 
 const Home: React.FC = () => {
-  const folderImg = IMG_BUBBLE_DATA_FOLDER;
+  const folderImg = variables.IMG_BUBBLE_DATA_FOLDER;
 
   const bubbleData = [
     {

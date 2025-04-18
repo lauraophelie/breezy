@@ -3,10 +3,10 @@ import "./Accueil.scss";
 import InputComponent from "../../components/input/InputComponent";
 import FilterButton from "./components/FilterButton";
 import ProduitDisplay from "./components/produits/ProduitDisplay";
-import { IMG_BUBBLE_DATA_FOLDER } from "../../config/constants";
+import { variables } from "../../config/constants";
 
 const Accueil : React.FC = () => {
-    const folderImg = IMG_BUBBLE_DATA_FOLDER;
+    const folderImg = variables.IMG_BUBBLE_DATA_FOLDER;
 
     const handleRefresh = (event: CustomEvent<RefresherEventDetail>) => {
         console.log("refresh");

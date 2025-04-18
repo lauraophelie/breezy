@@ -3,12 +3,12 @@ import "./Login.scss";
 import InputComponent from "../../components/input/InputComponent";
 import Bouton from "../../components/button/Bouton";
 
-import { IMG_BUBBLE_DATA_FOLDER } from "../../config/constants";
 import ImageBubble from "../home/components/ImageBubble";
 import { useHistory } from "react-router";
+import { variables } from "../../config/constants";
 
 const Login : React.FC = () => {
-    const folderImg = IMG_BUBBLE_DATA_FOLDER;
+    const folderImg = variables.IMG_BUBBLE_DATA_FOLDER;
     const history = useHistory();
 
     const bubbleData = [
