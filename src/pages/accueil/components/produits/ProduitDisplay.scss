@@ -1,0 +1,39 @@
+@import "../../../../assets/scss/mixin.scss";
+@import "../../../../assets/scss/variable.scss";
+
+.produit-display {
+    @include custom-box-size(170px, 140px, 10px);
+    background-color: $display-white;
+    transform: translate(23px, 25px);
+
+    &__image {
+        @include custom-box-size(115px, 115px, 50%);
+        background-color: transparent;
+        margin-left: 8%;
+        margin-top: -15%;
+
+        &--source {
+            @include custom-box-size(100%, 100%, 50%);
+        }
+    }
+
+    &__content {
+        font-size: 17px;
+        line-height: 5px;
+        padding-left: 15px;
+
+        &--name {
+            color: $main-component-font-color;
+            font-family: $main-component-title-font;
+        }
+        &--price {
+            color: $footer-main-color;
+            font-weight: lighter;
+            font-family: $secondary-component-title-font;
+        }
+    }
+
+    &__cart-button {
+        transform: translate(105px, -17px);
+    }
+}

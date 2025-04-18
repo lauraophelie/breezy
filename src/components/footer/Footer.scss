@@ -1,0 +1,9 @@
+@import "../../assets/scss/variable.scss";
+
+.footer {
+    --background: $footer-main-color;
+    --color: $subcomponent-background-color;
+    --color-selected: #C8BBF3;
+    height: 65px;
+    --border: 1px solid transparent;
+}
