@@ -1,13 +1,14 @@
-@import "../../../assets/scss/mixin.scss";
-@import "../../../assets/scss/variable.scss";
+@use "../../../assets/scss/mixin.scss" as mixins;
+@use "../../../assets/scss/variable.scss" as vars;
 
 .filter-button {
     width: fit-content;
-    background-color: $filter-button-color-transparent;
+    background-color: #e0dfe537;;
     padding: 15px 25px;
+    color: #E0DFE5;
 
     &--active {
-        background-color: $second-component-color;
-        color: $main-component-font-color;
+        background-color: #C8BBF3;
+        color: #242834;
     }
 }

@@ -1,8 +1,8 @@
-@import "../../assets/scss/variable.scss";
-@import "../../assets/scss/mixin.scss";
+@use "../../assets/scss/variable.scss" as vars;
+@use "../../assets/scss/mixin.scss" as mixins;
 
 .accueil {
-    background-color: $main-background-color;
+    background-color: vars.$main-background-color;
 
     &__header {
         border: 1px solid transparent;
@@ -13,10 +13,11 @@
 
         &__title, &__search {
             margin-left: 25px;
+            color: white;
         }
 
         &__title {
-            font-family: $main-component-title-font;
+            font-family: vars.$main-component-title-font;
             line-height: 5px;
             white-space: nowrap;
             font-size: 24px;

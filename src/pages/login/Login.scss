@@ -1,8 +1,8 @@
-@import "../../assets/scss/variable.scss";
-@import "../../assets/scss/mixin.scss";
+@use "../../assets/scss/variable.scss" as vars;
+@use "../../assets/scss/mixin.scss" as mixins;
 
 .login {
-    background-color: $main-background-color;
+    background-color: vars.$main-background-color;
 
     &__display {
         height: 30%;
@@ -12,17 +12,17 @@
         grid-gap: 20px;
 
         &__box {
-            @include custom-box-size(50px, 50px, 50%);
+            @include mixins.custom-box-size(50px, 50px, 50%);
             grid-row: 1;
 
             &--one {
-                @include custom-box-size(250px, 250px, 50%);
+                @include mixins.custom-box-size(250px, 250px, 50%);
                 transform: translate(-105px, -105px);
                 /*background-color: slateblue;*/
             }
 
             &--two {
-                @include custom-box-size(175px, 175px, 50%);
+                @include mixins.custom-box-size(175px, 175px, 50%);
                 transform: translate(0px, 75px);
                 /*background-color: cadetblue;*/
             }
@@ -37,22 +37,23 @@
         align-items: center;
 
         &__title {
-            font-family: $main-component-title-font;
+            font-family: vars.$main-component-title-font;
             font-size: 36px;
+            color: white;
         }
 
         &__subtitle {
-            font-family: $secondary-component-title-font;
+            font-family: vars.$secondary-component-title-font;
             font-weight: lighter;
-            color: $subtitle-color;
+            color: vars.$subtitle-color;
             letter-spacing: 2px;
             white-space: nowrap;
             transform: translate(0px, -20px);
         }
 
         &__submit-button {
-            background-color: $main-component-color;
-            color: $main-component-font-color;
+            background-color: vars.$main-component-color;
+            color: vars.$main-component-font-color;
             transform: translate(0px, 15px);
         }
     }
