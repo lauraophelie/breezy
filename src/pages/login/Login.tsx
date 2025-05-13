@@ -6,10 +6,44 @@ import Bouton from "../../components/button/Bouton";
 import { IMG_BUBBLE_DATA_FOLDER } from "../../config/constants";
 import ImageBubble from "../home/components/ImageBubble";
 import { useHistory } from "react-router";
+import { useState } from "react";
+import axios from "axios";
+import { environment } from "../../routes/environment";
 
 const Login : React.FC = () => {
     const folderImg = IMG_BUBBLE_DATA_FOLDER;
     const history = useHistory();
+    const [login, setLogin] = useState({
+        contact: ""
+    });
+    const [error, setError] = useState(null);
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+        setLogin({
+            ...login,
+            [e.target.name]: e.target.value
+        })
+    };
+
+    const signin = async (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
+        try {
+            const responseLogin = await axios.post(environment.apiUrl, login);
+            if(responseLogin.data.token) {
+                const token = responseLogin.data.token;
+                const contact = responseLogin.data.contact;
+
+                localStorage.setItem("token", token);
+                localStorage.setItem("contact", contact);
+
+                history.push("/accueil");
+            } else if (responseLogin.data.error) {
+                setError(responseLogin.data.error);
+                console.log(error);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     const bubbleData = [
         {
@@ -52,6 +86,7 @@ const Login : React.FC = () => {
                 <Bouton
                     text="Se connecter"
                     className="login__content__submit-button"
+                    onClick={signin}
                 />
             </div>
         </IonPage>
