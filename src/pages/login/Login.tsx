@@ -27,7 +27,7 @@ const Login : React.FC = () => {
     const signin = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         try {
-            const responseLogin = await axios.post(environment.apiUrl, login);
+            const responseLogin = await axios.post(`${environment.apiUrl}/auth/login`, login);
             if(responseLogin.data.token) {
                 const token = responseLogin.data.token;
                 const contact = responseLogin.data.contact;
@@ -81,7 +81,10 @@ const Login : React.FC = () => {
                 <InputComponent 
                     type={"text"} 
                     required={true}     
-                    placeholder="Numéro de téléphone"           
+                    placeholder="Numéro de téléphone"  
+                    name="contact"
+                    value={login.contact}
+                    onChange={handleChange}         
                 />
                 <Bouton
                     text="Se connecter"

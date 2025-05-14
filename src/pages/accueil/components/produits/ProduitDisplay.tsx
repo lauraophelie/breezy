@@ -7,6 +7,7 @@ interface ProduitDisplayProps {
     prix: number;
     image: string;
     className?: string;
+    onClick?: (event: any) => void;
 }
 
 const ProduitDisplay : React.FC<ProduitDisplayProps> = (props) => {
@@ -28,6 +29,7 @@ const ProduitDisplay : React.FC<ProduitDisplayProps> = (props) => {
             </div>
             <PlusButton 
                 className="produit-display__cart-button"
+                onClick={props.onClick}
             />
         </div>
     )

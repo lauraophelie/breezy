@@ -34,6 +34,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Login from './pages/login/Login';
 import Footer from './components/footer/Footer';
+import DetailsProduit from './pages/details-produits/DetailsProduit';
+import Panier from './pages/panier/Panier';
 
 setupIonicReact();
 
@@ -44,12 +46,22 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home />
         </Route>
+
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>
+
         <Route path="/login">
           <Login />
         </Route> 
+
+        <Route path="/detailsProduit">
+          <DetailsProduit />
+        </Route>
+        
+        <Route path="/panier">
+          <Panier />
+        </Route>
 
         <Footer />
       </IonRouterOutlet>

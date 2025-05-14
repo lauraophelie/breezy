@@ -4,6 +4,11 @@ import InputComponent from "../../components/input/InputComponent";
 import FilterButton from "./components/FilterButton";
 import ProduitDisplay from "./components/produits/ProduitDisplay";
 import { IMG_BUBBLE_DATA_FOLDER } from "../../config/constants";
+import { useEffect, useState } from "react";
+import { Categorie, Produit } from "./interface/produit";
+import axios from "axios";
+import { environment } from "../../routes/environment";
+import { useHistory } from "react-router";
 
 const Accueil : React.FC = () => {
     const folderImg = IMG_BUBBLE_DATA_FOLDER;
@@ -13,7 +18,39 @@ const Accueil : React.FC = () => {
         setTimeout(() => {
             event.detail.complete();
         }, 2000);
-    }
+    };
+    const [categorie, setCategorie] = useState<Categorie[]>([]);
+    const [produits, setProduits] = useState<Produit[]>([]);
+    const history = useHistory();
+
+    useEffect(() => {
+        const fetchDataCategorie = async() => {
+            try {
+                const response = await axios.get(`${environment.apiUrl}/categorie`);
+                if(response.data.data) {
+                    setCategorie(response.data.data)
+                } else if(response.data.error) {
+                    console.error(response.data.error);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        const fetchDataProduits = async () => {
+            try {
+                const response = await axios.get(`${environment.apiUrl}/produits`);
+                if(response.data.data) {
+                    setProduits(response.data.data);
+                } else if(response.data.error) {
+                    console.error(response.data.error);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchDataCategorie();
+        fetchDataProduits();
+    });
 
     return (
         <IonPage className="accueil">
@@ -40,17 +77,11 @@ const Accueil : React.FC = () => {
                     defaultClick={2}
                 />
 
-                <FilterButton 
-                    textContent="Fruits"
-                />
-
-                <FilterButton
-                    textContent="Légumes"
-                />
-
-                <FilterButton
-                    textContent="Boissons"
-                />
+                {categorie.map((item, index) => (
+                    <FilterButton 
+                        textContent={item.designationCategorie}
+                    />
+                ))}
             </div>
 
                 <div className="accueil__display-content">
@@ -64,8 +95,19 @@ const Accueil : React.FC = () => {
                         <IonRefresherContent> </IonRefresherContent>
                     </IonRefresher>
 
+                    {produits.map((item, index) => (
+                        <ProduitDisplay 
+                            nomProduit={item.nomProduit} 
+                            prix={item.prix} 
+                            image={`${environment.apiUrl}/uploads/${item.pathImage}`} 
+                            onClick={() => history.push({
+                                pathname: "/detailsProduit",
+                                state: { id: item._id }
+                            })}
+                        />
+                    ))}
 
-                    <ProduitDisplay 
+                    {/* <ProduitDisplay 
                         nomProduit={"Pancakes"} 
                         prix={20000} 
                         image={folderImg + "im2.jpg"}  
@@ -87,7 +129,7 @@ const Accueil : React.FC = () => {
                         nomProduit={"Pancakes"} 
                         prix={20000} 
                         image={folderImg + "im2.jpg"}   
-                    />
+                    /> */}
                 </div>
         </IonPage>
     )
