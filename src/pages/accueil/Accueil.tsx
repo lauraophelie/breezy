@@ -80,12 +80,13 @@ const Accueil : React.FC = () => {
                 {categorie.map((item, index) => (
                     <FilterButton 
                         textContent={item.designationCategorie}
+                        key={index}
                     />
                 ))}
             </div>
 
                 <div className="accueil__display-content">
-                    <IonRefresher 
+                    {/* <IonRefresher 
                         slot="fixed" 
                         pullFactor={0.5} 
                         pullMin={100} 
@@ -93,7 +94,7 @@ const Accueil : React.FC = () => {
                         onIonRefresh={handleRefresh}
                     >
                         <IonRefresherContent> </IonRefresherContent>
-                    </IonRefresher>
+                    </IonRefresher> */}
 
                     {produits.map((item, index) => (
                         <ProduitDisplay 
@@ -104,6 +105,7 @@ const Accueil : React.FC = () => {
                                 pathname: "/detailsProduit",
                                 state: { id: item._id }
                             })}
+                            key={index}
                         />
                     ))}
 
